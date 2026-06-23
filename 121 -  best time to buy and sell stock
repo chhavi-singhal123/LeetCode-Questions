@@ -1,0 +1,14 @@
+lass Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+       int ans=0;
+      int max = -100000;
+      for(int i = n-1; i>=0;i--){
+        int curr_profit = max - prices[i];
+
+        ans = Math.max( ans, curr_profit);
+        max = Math.max(max , prices[i]);
+      }
+      return ans;
+    }
+}
